@@ -7,8 +7,15 @@ $units = 'metric';
 $apiURL = "{$link}?q={$city}&units={$units}&appid={$apiKey}";
 
 
- $content = file_get_contents("{$link}?q={$city}&units={$units}&appid={$apiKey}");
+// $content = file_get_contents("{$link}?q={$city}&units={$units}&appid={$apiKey}");
 //$content = file_get_contents("http://api.openweathermaporg./data/2.5/weather?q=Smolensk,ru&appid=e7425706bcd4490ebe5d6fef880070b0");
+$content = file_get_contents("{$link}?q={$city}&units={$units}&appid={$apiKey}") or exit('Не удалось получить данные');
+// $content = file_get_contents($link);
+// 	if ($content === false){
+// 		exit('Не удалось получить данные');
+// }
+
+
 $location = "Current weather in Smolensk";
 $weather = "Weather: ";
 $current_temp = "Current temperature, °С: ";
@@ -36,11 +43,11 @@ $icon = "http://openweathermap.org/img/w/".$result["weather"][0]["icon"].".png";
 
 		"<b>", $weather, "</b>", $result["weather"][0]["description"], "<br>",
 
-		"<b>", $current_temp, "</b>", $result["main"]["temp"] - 273, "<br>",
+		"<b>", $current_temp, "</b>", $result["main"]["temp"], "<br>",
 
-		"<b>", $temp_min, "</b>", $result["main"]["temp_min"] - 273, "<br>",
+		"<b>", $temp_min, "</b>", $result["main"]["temp_min"], "<br>",
 
-		"<b>", $temp_max, "</b>", $result["main"]["temp_max"] - 273, "<br>",
+		"<b>", $temp_max, "</b>", $result["main"]["temp_max"], "<br>",
 
 		"<b>", $wind_power, "</b>", $result["wind"]["speed"], "<br>",
 
