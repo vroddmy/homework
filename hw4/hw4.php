@@ -7,14 +7,7 @@ $units = 'metric';
 $apiURL = "{$link}?q={$city}&units={$units}&appid={$apiKey}";
 
 
-// $content = file_get_contents("{$link}?q={$city}&units={$units}&appid={$apiKey}");
-//$content = file_get_contents("http://api.openweathermaporg./data/2.5/weather?q=Smolensk,ru&appid=e7425706bcd4490ebe5d6fef880070b0");
 $content = file_get_contents("{$link}?q={$city}&units={$units}&appid={$apiKey}") or exit('Не удалось получить данные');
-// $content = file_get_contents($link);
-// 	if ($content === false){
-// 		exit('Не удалось получить данные');
-// }
-
 
 $location = "Current weather in Smolensk";
 $weather = "Weather: ";
