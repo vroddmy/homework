@@ -36,23 +36,23 @@ $icon = "http://openweathermap.org/img/w/".$result['weather'][0]['icon'].'.png';
 </head>
 <body>
 <?php
-	echo "<b>", mb_convert_case($location, 0), "</b>", "<br>", 
+	echo '<b>', mb_convert_case($location, 0), '</b>', '<br>', 
 
-		"<img src = $icon>", "<br>",
+		'<img src = $icon>', '<br>',
 
-		"<b>", $weather, "</b>", $result["weather"][0]["description"], "<br>",
+		'<b>', $weather, '</b>',checkData($result['weather'][0]['description']), '<br>',
 
-		"<b>", $current_temp, "</b>", $result["main"]["temp"], "<br>",
+		'<b>', $current_temp, '</b>', checkData($result['main']['temp']), '<br>',
+	
+		'<b>', $temp_min, '</b>', checkData($result['main']['temp_min']), '<br',
 
-		"<b>", $temp_min, "</b>", $result["main"]["temp_min"], "<br>",
+		'<b>', $temp_max, '</b>', checkData($result['main']['temp_max']), '<br>',
 
-		"<b>", $temp_max, "</b>", $result["main"]["temp_max"], "<br>",
+		'<b>', $wind_power, '</b', checkData($result['wind']['speed']), '<br>',
 
-		"<b>", $wind_power, "</b>", $result["wind"]["speed"], "<br>",
+		'<b>', $humidity, '</b>', checkData($result['main']['humidity']), '<br>',
 
-		"<b>", $humidity, "</b>", $result["main"]["humidity"], "<br>",
-
-		"<b>", $pressure, "</b>", $result["main"]["pressure"] * 0.750062, "<br>";
+		'<b>', $pressure, '</b>', checkData($result['main']['pressure']) * 0.750062, '<br>';
 
 ?>
 </body>
