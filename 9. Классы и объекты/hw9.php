@@ -18,8 +18,8 @@ class TV
     public $type;
     public $size;
     public function __construct($type, $size){
-        $this->type=$type;
-        $this->size=$size;
+        $this->type = $type;
+        $this->size = $size;
     }
 }
 $LG = new TV('color','small');
@@ -27,12 +27,12 @@ $Toshiba = new TV('bl&wh', 'big');
 
 class Pen
 {
-    public $colorpen;
+    public $pencolor;
     public $type;
-    public function __construct($colorpen, $type)
+    public function __construct($pencolor, $type)
     {
         $this->type=$type;
-        $this->colorpen=$colorpen;
+        $this->pencolor=$pencolor;
     }
 }
 $Parker = new Pen('green', 'free');
@@ -44,14 +44,14 @@ class Duck
     public $gend;
     public function __construct($size, $gend)
     {
-        $this->size=$size;
-        $this->gend=$gend;
+        $this->size = $size;
+        $this->gend = $gend;
     }
 }
 $Donald = new Duck('big', 'drake');
 $Daisy = new Duck('small', 'duck');
 
-class Goods
+class product
 {
     public $price;
     public $discont;
@@ -59,14 +59,14 @@ class Goods
     public $tv;
     public function __construct($price, $discont, $pop, $tv)
     {
-        $this->price=$price;
-        $this->discont=$discont;
-        $this->pop=$pop;
-        $this->tv=$tv;
+        $this->price = $price;
+        $this->discont = $discont;
+        $this->pop = $pop;
+        $this->tv = $tv;
     }
 }
-$First = new Goods('1000', '20', 'popular', 'LG');
-$Second = new Goods('500', '40', 'unpopular', 'Samsung');
-$Third = new Goods('1200', '10', 'popular', 'Toshiba');
+$First = new product('1000', '20', 'popular', 'LG');
+$Second = new product('500', '40', 'unpopular', 'Samsung');
+$Third = new product('1200', '10', 'popular', 'Toshiba');
 
 ?>
